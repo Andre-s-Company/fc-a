@@ -5,29 +5,29 @@ import { Loader } from "@react-three/drei";
 
 function App() {
   return (
-    <article className="w-full h-screen bg-blue-50">
+    <article className="w-full h-screen bg-blue-200">
       <Canvas
-        className="r3f"
-        camera={{
-          fov: 75,
-          position: [4, 1.5, 4],
-        }}
+      className="r3f"
+      camera={{
+        fov: 75,
+        position: [4, 1.5, 4],
+      }}
       >
-        <Suspense fallback={null}>
-          <Experience />
-        </Suspense>
+      <Suspense fallback={null}>
+        <Experience />
+      </Suspense>
       </Canvas>
       <Loader
-        containerStyles={{
-          backgroundColor: "#fce7f3",
-          color: "black",
-        }}
-        dataStyles={{
-          color: "black",
-        }}
-        barStyles={{
-          backgroundColor: "#ad25be",
-        }}
+      containerStyles={{
+        backgroundColor: "#bfdbfe", // blue-200
+        color: "black",
+      }}
+      dataStyles={{
+        color: "black",
+      }}
+      barStyles={{
+        backgroundColor: "#2563eb", // blue-600
+      }}
       />
     </article>
   );
