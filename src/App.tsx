@@ -2,10 +2,12 @@ import { Suspense } from "react";
 import { Experience } from "./components/Experience";
 import { Canvas } from "@react-three/fiber";
 import { Loader } from "@react-three/drei";
+import { Leva } from "leva";
 
 function App() {
   return (
     <article className="w-full h-screen bg-blue-200">
+      <Leva hidden />
       <Canvas
       className="r3f"
       camera={{
