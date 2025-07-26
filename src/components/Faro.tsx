@@ -9,9 +9,6 @@ import { useControls } from "leva";
 
 gsap.registerPlugin(useGSAP);
 
-export const FLOOR_HEIGHT = 2.3;
-export const NB_FLOORS = 3;
-
 type GLTFResult = GLTF & {
   nodes: {
     experiencia: THREE.Mesh;
