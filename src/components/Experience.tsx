@@ -5,7 +5,7 @@ import { Faro } from "./Faro";
 export const Experience = () => {
   return (
     <>
-      <ambientLight intensity={3.5} />
+      <ambientLight intensity={2.5} />
       <ScrollControls pages={4} damping={0.251}>
         <Faro />
         {/* <Overlay /> */}
