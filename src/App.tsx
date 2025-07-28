@@ -6,7 +6,7 @@ import { Leva } from "leva";
 
 function App() {
   return (
-    <article className="w-full h-screen bg-blue-200">
+    <article className="w-full h-screen bg-[#01021A]">
       <Leva hidden />
       <Canvas
       className="r3f"

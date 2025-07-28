@@ -11,8 +11,8 @@ gsap.registerPlugin(useGSAP);
 
 type GLTFResult = GLTF & {
   nodes: {
-    experiencia: THREE.Mesh;
-  };
+    ['isla-faro']: THREE.Mesh
+  }
   materials: {
     ["Material.001"]: THREE.MeshStandardMaterial;
   };
@@ -114,8 +114,9 @@ export const Faro = (props: JSX.IntrinsicElements["group"]) => {
       rotation={rotation}
     >
       <mesh
-        geometry={nodes.experiencia.geometry}
-        material={materials["Material.001"]}
+        geometry={nodes['isla-faro'].geometry}
+        material={materials['Material.001']}
+        position={[0, 0, -0.702]}
       />
     </group>
   );
