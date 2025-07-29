@@ -33,10 +33,10 @@ interface SectionProps {
 }
 
 const Section = ({ children, right, opacity }: SectionProps) => {
-  const [finalOpacity, setFinalOpacity] = useState(opacity ?? 1);
+  const [contentOpacity, setContentOpacity] = useState(0);
 
   const handleOpacityChange = (value: number) => {
-    setFinalOpacity(value);
+    setContentOpacity(value);
   };
 
   return (
@@ -45,9 +45,10 @@ const Section = ({ children, right, opacity }: SectionProps) => {
         "h-screen w-screen max-w-6xl flex flex-col justify-center p-10",
         right ? "items-start" : "items-end"
       )}
+      style={{ opacity: opacity }}
     >
       <div className="bg-neutral-50 p-2 rounded-full mb-2 border-2 border-neutral-200">
-        {finalOpacity > 0.5 ? (
+        {contentOpacity > 0.5 ? (
           <FaEye
             className="text-2xl cursor-pointer"
             onClick={() => handleOpacityChange(0)}
@@ -59,7 +60,7 @@ const Section = ({ children, right, opacity }: SectionProps) => {
           />
         )}
       </div>
-      <div className="max-w-md w-full transition-opacity" style={{ opacity: finalOpacity }}>
+      <div className="max-w-md w-full" style={{ opacity: contentOpacity }}>
         <div className="bg-neutral-50 border border-neutral-200 shadow-md rounded-2xl px-6 py-8">
           {children}
         </div>
