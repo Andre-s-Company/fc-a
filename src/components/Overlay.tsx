@@ -4,8 +4,26 @@ import { useState, type JSX } from "react";
 import { cn } from "../shared/utils";
 
 // Icons
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
-import { SiAstro, SiNextdotjs, SiJavascript, SiTypescript, SiTailwindcss, SiHtml5, SiCss3, SiGit, SiReact, SiSocketdotio, SiThreedotjs } from "react-icons/si";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaEyeSlash,
+  FaEye,
+} from "react-icons/fa";
+import {
+  SiAstro,
+  SiNextdotjs,
+  SiJavascript,
+  SiTypescript,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss3,
+  SiGit,
+  SiReact,
+  SiSocketdotio,
+  SiThreedotjs,
+} from "react-icons/si";
 
 // ---------------------- Section Component ----------------------
 interface SectionProps {
@@ -15,15 +33,33 @@ interface SectionProps {
 }
 
 const Section = ({ children, right, opacity }: SectionProps) => {
+  const [finalOpacity, setFinalOpacity] = useState(opacity ?? 1);
+
+  const handleOpacityChange = (value: number) => {
+    setFinalOpacity(value);
+  };
+
   return (
     <section
       className={cn(
         "h-screen w-screen max-w-6xl flex flex-col justify-center p-10",
         right ? "items-start" : "items-end"
       )}
-      style={{ opacity: opacity ?? 1 }}
     >
-      <div className="max-w-md w-full">
+      <div className="bg-neutral-50 p-2 rounded-full mb-2 border-2 border-neutral-200">
+        {finalOpacity > 0.5 ? (
+          <FaEye
+            className="text-2xl cursor-pointer"
+            onClick={() => handleOpacityChange(0)}
+          />
+        ) : (
+          <FaEyeSlash
+            className="text-2xl cursor-pointer opacity-50"
+            onClick={() => handleOpacityChange(1)}
+          />
+        )}
+      </div>
+      <div className="max-w-md w-full" style={{ opacity: finalOpacity }}>
         <div className="bg-neutral-50 border border-neutral-200 shadow-md rounded-2xl px-6 py-8">
           {children}
         </div>
@@ -109,18 +145,34 @@ export const Overlay = () => {
       <div className="w-screen h-fit flex flex-col items-center">
         {/* ---------------------- Section 1 ---------------------- */}
         <Section right opacity={opacityFirstSection}>
-          <h2 className="font-serif text-2xl text-neutral-800 mb-4">Experiencia y Certificaciones</h2>
+          <h2 className="font-serif text-2xl text-neutral-800 mb-4">
+            Experiencia y Certificaciones
+          </h2>
 
-          <div className="text-base text-neutral-900 mb-1">Ene 2022 - Actualidad</div>
-          <div className="font-semibold text-neutral-700 mb-1">Estudiante de Desarrollo Web</div>
+          <div className="text-base text-neutral-900 mb-1">
+            Ene 2022 - Actualidad
+          </div>
+          <div className="font-semibold text-neutral-700 mb-1">
+            Estudiante de Desarrollo Web
+          </div>
           <p className="text-sm text-neutral-600 mb-3">
-            Aprendiendo y aplicando tecnologías web modernas para crear aplicaciones interactivas y eficientes.
+            Aprendiendo y aplicando tecnologías web modernas para crear
+            aplicaciones interactivas y eficientes.
           </p>
 
           <ul className="list-disc pl-5 space-y-1 text-sm text-neutral-600">
-            <li><span className="font-medium">Desarrollo web:</span> HTML, CSS, TypeScript, Tailwind CSS, Three.js, r3f y Git.</li>
-            <li><span className="font-medium">Aprendizaje continuo:</span> Busco retos que expandan mi conocimiento técnico.</li>
-            <li><span className="font-medium">Proyectos personales:</span> Aplicaciones y colaboración en código abierto.</li>
+            <li>
+              <span className="font-medium">Desarrollo web:</span> HTML, CSS,
+              TypeScript, Tailwind CSS, Three.js, r3f y Git.
+            </li>
+            <li>
+              <span className="font-medium">Aprendizaje continuo:</span> Busco
+              retos que expandan mi conocimiento técnico.
+            </li>
+            <li>
+              <span className="font-medium">Proyectos personales:</span>{" "}
+              Aplicaciones y colaboración en código abierto.
+            </li>
           </ul>
 
           <div className="flex gap-2 mt-4 justify-end">
@@ -135,10 +187,27 @@ export const Overlay = () => {
 
         {/* ---------------------- Section 2 ---------------------- */}
         <Section opacity={opacitySecondSection}>
-          <h2 className="font-serif text-2xl text-neutral-800 mb-4">Tech Stack</h2>
+          <h2 className="font-serif text-2xl text-neutral-800 mb-4">
+            Tech Stack
+          </h2>
 
           <div className="flex flex-wrap gap-3">
-            {["Astro", "Next.js", "JavaScript", "TypeScript", "Tailwind", "HTML", "CSS", "Git", "GitHub", "React", "Socket.io", "Three.js", "r3f", "GSAP"].map((tech) => (
+            {[
+              "Astro",
+              "Next.js",
+              "JavaScript",
+              "TypeScript",
+              "Tailwind",
+              "HTML",
+              "CSS",
+              "Git",
+              "GitHub",
+              "React",
+              "Socket.io",
+              "Three.js",
+              "r3f",
+              "GSAP",
+            ].map((tech) => (
               <Tag key={tech} label={tech} />
             ))}
           </div>
@@ -161,7 +230,9 @@ export const Overlay = () => {
 
         {/* ---------------------- Section 3 ---------------------- */}
         <Section right opacity={opacityThirdSection}>
-          <h2 className="font-serif text-2xl text-neutral-800 mb-4">Contacto</h2>
+          <h2 className="font-serif text-2xl text-neutral-800 mb-4">
+            Contacto
+          </h2>
 
           <div className="text-sm space-y-2">
             <ContactItem
