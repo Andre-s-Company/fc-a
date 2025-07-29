@@ -96,6 +96,15 @@ export const Menu = () => {
           >
             Contacto
           </button>
+          <button
+            onClick={() => handleMenuClick(3)}
+            className={cn(
+              "hover:scale-105 hover:text-black transition-all duration-200",
+              page === 3 ? "font-semibold" : "text-gray-500"
+            )}
+          >
+            Modelo
+          </button>
         </div>
       </div>
     </>
