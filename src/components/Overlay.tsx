@@ -59,7 +59,7 @@ const Section = ({ children, right, opacity }: SectionProps) => {
           />
         )}
       </div>
-      <div className="max-w-md w-full" style={{ opacity: finalOpacity }}>
+      <div className="max-w-md w-full transition-opacity" style={{ opacity: finalOpacity }}>
         <div className="bg-neutral-50 border border-neutral-200 shadow-md rounded-2xl px-6 py-8">
           {children}
         </div>
