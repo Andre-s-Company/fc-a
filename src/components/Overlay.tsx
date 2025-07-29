@@ -32,8 +32,8 @@ interface SectionProps {
   opacity?: number;
 }
 
-const Section = ({ children, right, opacity }: SectionProps) => {
-  const [contentOpacity, setContentOpacity] = useState(0);
+const Section = ({ children, right, opacity = 1 }: SectionProps) => {
+  const [contentOpacity, setContentOpacity] = useState(1);
 
   const handleOpacityChange = (value: number) => {
     setContentOpacity(value);
