@@ -3,10 +3,12 @@ import { Experience } from "./components/Experience";
 import { Canvas } from "@react-three/fiber";
 import { Loader } from "@react-three/drei";
 import { Leva } from "leva";
+import { Menu } from "./components/Menu";
 
 function App() {
   return (
     <article className="w-full h-screen bg-sky-200">
+      <Menu />
       <Leva hidden />
       <Canvas
       className="r3f"

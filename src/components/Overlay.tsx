@@ -1,6 +1,6 @@
 import { Scroll, useScroll } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useState, type JSX } from "react";
+import { useCallback, useEffect, useState, type JSX } from "react";
 import { cn } from "../shared/utils";
 
 // Icons
@@ -24,6 +24,7 @@ import {
   SiSocketdotio,
   SiThreedotjs,
 } from "react-icons/si";
+import { usePage } from "../store/usePage";
 
 // ---------------------- Section Component ----------------------
 interface SectionProps {
@@ -123,6 +124,8 @@ const ContactItem = ({
 // ---------------------- Overlay ----------------------
 export const Overlay = () => {
   const scroll = useScroll();
+  const page = usePage((state) => state.page);
+  const setPage = usePage((state) => state.setPage);
 
   const [opacityFirstSection, setOpacityFirstSection] = useState(1);
   const [opacitySecondSection, setOpacitySecondSection] = useState(1);
@@ -134,11 +137,22 @@ export const Overlay = () => {
     setOpacityThirdSection(scroll.curve(0.55, 0.25));
   });
 
-  const setOffset = (page: number) => {
-    scroll.el.scrollTo({
-      top: 0.2675 * page * scroll.el.scrollHeight,
-      behavior: "smooth",
-    });
+  const setOffset = useCallback(
+    (page: number) => {
+      scroll.el.scrollTo({
+        top: 0.2675 * page * scroll.el.scrollHeight,
+        behavior: "smooth",
+      });
+    },
+    [scroll]
+  );
+
+  useEffect(() => {
+    setOffset(page);
+  }, [page, setOffset]);
+
+  const handleSectionChange = (newPage: number) => {
+    setPage(newPage);
   };
 
   return (
@@ -178,7 +192,7 @@ export const Overlay = () => {
 
           <div className="flex gap-2 mt-4 justify-end">
             <button
-              onClick={() => setOffset(1)}
+              onClick={() => handleSectionChange(1)}
               className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
             >
               Siguiente
@@ -215,13 +229,13 @@ export const Overlay = () => {
 
           <div className="flex gap-2 mt-4 justify-between">
             <button
-              onClick={() => setOffset(0)}
+              onClick={() => handleSectionChange(0)}
               className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
             >
               Anterior
             </button>
             <button
-              onClick={() => setOffset(2)}
+              onClick={() => handleSectionChange(2)}
               className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
             >
               Siguiente
@@ -258,13 +272,13 @@ export const Overlay = () => {
 
           <div className="flex gap-2 mt-4 justify-between">
             <button
-              onClick={() => setOffset(1)}
+              onClick={() => handleSectionChange(1)}
               className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
             >
               Anterior
             </button>
             <button
-              onClick={() => setOffset(3)}
+              onClick={() => handleSectionChange(3)}
               className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
             >
               Ver Modelo
