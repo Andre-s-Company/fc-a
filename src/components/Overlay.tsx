@@ -193,7 +193,7 @@ export const Overlay = () => {
           <div className="flex gap-2 mt-4 justify-end">
             <button
               onClick={() => handleSectionChange(1)}
-              className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
+              className="px-4 py-2 border border-neutral-900 text-neutral-50 bg-neutral-900 rounded-md transition hover:bg-neutral-50 hover:text-neutral-950"
             >
               Siguiente
             </button>
@@ -236,7 +236,7 @@ export const Overlay = () => {
             </button>
             <button
               onClick={() => handleSectionChange(2)}
-              className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
+              className="px-4 py-2 border border-neutral-900 text-neutral-50 bg-neutral-900 rounded-md transition hover:bg-neutral-50 hover:text-neutral-950"
             >
               Siguiente
             </button>
@@ -279,7 +279,7 @@ export const Overlay = () => {
             </button>
             <button
               onClick={() => handleSectionChange(3)}
-              className="px-4 py-2 border border-neutral-900 text-neutral-900 rounded-md transition hover:bg-neutral-50"
+              className="px-4 py-2 border border-neutral-900 text-neutral-50 bg-neutral-900 rounded-md transition hover:bg-neutral-50 hover:text-neutral-950"
             >
               Ver Modelo
             </button>
