@@ -3,35 +3,41 @@ import { Experience } from "./components/Experience";
 import { Canvas } from "@react-three/fiber";
 import { Loader } from "@react-three/drei";
 import { Leva } from "leva";
-import { Menu } from "./components/Menu";
+import { useBackground } from "./store/useBackground";
+import { cn } from "./shared/utils";
 
 function App() {
+  const background = useBackground((state) => state.background);
+
   return (
-    <article className="w-full h-screen bg-sky-200">
-      <Menu />
+    <article
+      className={cn("w-full h-screen transition-colors duration-300")}
+      style={{ backgroundColor: background }}
+    >
+      {/* <Menu /> */}
       <Leva hidden />
       <Canvas
-      className="r3f"
-      camera={{
-        fov: 75,
-        position: [4, 1.5, 4],
-      }}
+        className="r3f"
+        camera={{
+          fov: 75,
+          position: [4, 1.5, 4],
+        }}
       >
-      <Suspense fallback={null}>
-        <Experience />
-      </Suspense>
+        <Suspense fallback={null}>
+          <Experience />
+        </Suspense>
       </Canvas>
       <Loader
-      containerStyles={{
-        backgroundColor: "#bfdbfe", // blue-200
-        color: "black",
-      }}
-      dataStyles={{
-        color: "black",
-      }}
-      barStyles={{
-        backgroundColor: "#2563eb", // blue-600
-      }}
+        containerStyles={{
+          backgroundColor: "#bfdbfe", // blue-200
+          color: "black",
+        }}
+        dataStyles={{
+          color: "black",
+        }}
+        barStyles={{
+          backgroundColor: "#2563eb", // blue-600
+        }}
       />
     </article>
   );
