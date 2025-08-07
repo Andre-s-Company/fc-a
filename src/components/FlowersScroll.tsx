@@ -10,6 +10,20 @@ import { Yellow5 } from "./models/Yellow5";
 import { Yellow4 } from "./models/Yellow4";
 import { Yellow3 } from "./models/Yellow3";
 import { Yellow2 } from "./models/Yellow2";
+import { SkyBlue1 } from "./models/SkyBlue1";
+import { SkyBlue2 } from "./models/SkyBlue2";
+import { SkyBlue3 } from "./models/SkyBlue3";
+import { SkyBlue4 } from "./models/SkyBlue4";
+import { Blue1 } from "./models/Blue1";
+import { White1 } from "./models/White1";
+import { White2 } from "./models/White2";
+import { White3 } from "./models/White3";
+import { Purple1 } from "./models/Purple1";
+import { Red1 } from "./models/Red1";
+import { Red2 } from "./models/Red2";
+import { Red3 } from "./models/Red3";
+import { Pink1 } from "./models/Pink1";
+import { Pink2 } from "./models/Pink2";
 
 gsap.registerPlugin(useGSAP);
 
@@ -52,13 +66,13 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
 
       // Colores por nivel
       const backgrounds = [
-        "#fff9c4", // Nivel 1 - amarillo claro
-        "#bbdefb", // Nivel 2 - azul claro
-        "#e1bee7", // Nivel 3 - morado claro
-        "#fffde7", // Nivel 4 - blanco/beige
-        "#ffcdd2", // Nivel 5 - rojo claro
-        "#f8bbd0", // Nivel 6 - rosa claro
-        "#2196f3", // Nivel 7 - azul fuerte
+        "#fffde4", // Nivel 1 - amarillo más claro
+        "#e3f2fd", // Nivel 2 - azul más claro
+        "#f3e5f5", // Nivel 3 - morado más claro
+        "#ffffff", // Nivel 4 - blanco puro
+        "#ffeaea", // Nivel 5 - rojo más claro
+        "#fde4ec", // Nivel 6 - rosa más claro
+        "#bbdfff", // Nivel 7 - azul fuerte pero claro
       ];
 
       backgrounds.forEach((color, i) => {
@@ -85,22 +99,30 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
         <Yellow5 />
       </group>
       <group ref={level2} position={[0, -FLOOR_HEIGHT * 1, 0]}>
-        <Yellow1 />
+        <SkyBlue1 />
+        <SkyBlue2 />
+        <SkyBlue3 />
+        <SkyBlue4 />
       </group>
       <group ref={level3} position={[0, -FLOOR_HEIGHT * 2, 0]}>
-        <Yellow1 />
+        <Purple1 />
       </group>
       <group ref={level4} position={[0, -FLOOR_HEIGHT * 3, 0]}>
-        <Yellow1 />
+        <White1 />
+        <White2 />
+        <White3 scale={0.03} />
       </group>
       <group ref={level5} position={[0, -FLOOR_HEIGHT * 4, 0]}>
-        <Yellow1 />
+        <Red1 scale={0.2} />
+        <Red2 />
+        <Red3 />
       </group>
       <group ref={level6} position={[0, -FLOOR_HEIGHT * 5, 0]}>
-        <Yellow1 />
+        <Pink1 />
+        <Pink2 />
       </group>
       <group ref={level7} position={[0, -FLOOR_HEIGHT * 6, 0]}>
-        <Yellow1 />
+        <Blue1 />
       </group>
     </group>
   );
