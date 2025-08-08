@@ -79,6 +79,7 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
 
   const pink1Ref = useRef<THREE.Group>(null!);
   const pink2Ref = useRef<THREE.Group>(null!);
+  const pink3Ref = useRef<THREE.Group>(null!);
 
   const blue1Ref = useRef<THREE.Group>(null!);
 
@@ -224,22 +225,28 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
   };
 
   // Flores Rosas
-  const pink1Props = useControls("pink1", {
-    position: { value: [0, 0, 0], step: 0.1 },
-    scale: { value: 1, min: 0, max: 50, step: 0.1 },
-    rotation: { value: [0, 0, 0], step: 0.1 },
-  });
+  const pink1Props: FlowerProps = {
+    position: [-2, -3, -2],
+    scale: 2,
+    rotation: [0, 0.3, 0],
+  };
 
-  const pink2Props = useControls("pink2", {
-    position: { value: [0, 0, 0], step: 0.1 },
-    scale: { value: 1, min: 0, max: 50, step: 0.1 },
-    rotation: { value: [0, 0, 0], step: 0.1 },
-  });
+  const pink2Props: FlowerProps = {
+    position: [-1.5, -3, 0],
+    scale: 1,
+    rotation: [0, 0, 0],
+  };
+
+  const pink3Props: FlowerProps = {
+    position: [-0.5, -3, -1.5],
+    scale: 0.7,
+    rotation: [0, 1.2, 0],
+  };
 
   // Flores Azules
   const blue1Props = useControls("blue1", {
-    position: { value: [0, 0, 0], step: 0.1 },
-    scale: { value: 1, min: 0, max: 50, step: 0.1 },
+    position: { value: [0, -0.5, 0], step: 0.1 },
+    scale: { value: 7, min: 0, max: 50, step: 0.1 },
     rotation: { value: [0, 0, 0], step: 0.1 },
   });
 
@@ -280,6 +287,7 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
       <group ref={level6} position={[0, -FLOOR_HEIGHT * 5, 0]}>
         <Pink1 ref={pink1Ref} {...pink1Props} />
         <Pink2 ref={pink2Ref} {...pink2Props} />
+        <Pink2 ref={pink3Ref} {...pink3Props} />
       </group>
 
       <group ref={level7} position={[0, -FLOOR_HEIGHT * 6, 0]}>

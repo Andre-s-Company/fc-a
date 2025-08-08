@@ -29,14 +29,14 @@ function App() {
       </Canvas>
       <Loader
         containerStyles={{
-          backgroundColor: "#bfdbfe", // blue-200
+          backgroundColor: "#fffde4", // yellow-200
           color: "black",
         }}
         dataStyles={{
           color: "black",
         }}
         barStyles={{
-          backgroundColor: "#2563eb", // blue-600
+          backgroundColor: "#d39100", // yellow-600
         }}
       />
     </article>
