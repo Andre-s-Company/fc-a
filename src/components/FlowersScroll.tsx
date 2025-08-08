@@ -123,6 +123,339 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
           (1 / NB_FLOORS) * i
         );
       });
+
+      // ANIMACIONES DE ENTRADA POR NIVEL CON OFFSETS ESPECÍFICOS
+
+      // Nivel 1: Se lanza al instante con otro evento
+
+      // Nivel 2: offset 0.0613 - 0.1687
+      const level2Start = 0.0613;
+      const level2Duration = 0.1687 - 0.0613;
+
+      // Azules cielo
+      objectTimeline.current.from(
+        skyBlue1Ref.current.position,
+        {
+          x:
+            skyBlue1Props.position[0] < 0
+              ? skyBlue1Props.position[0] - 4
+              : skyBlue1Props.position[0] + 4,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start
+      );
+      objectTimeline.current.from(
+        skyBlue1Ref.current.rotation,
+        {
+          y: skyBlue1Props.rotation[1] - Math.PI,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start
+      );
+
+      objectTimeline.current.from(
+        skyBlue2Ref.current.position,
+        {
+          x:
+            skyBlue2Props.position[0] < 0
+              ? skyBlue2Props.position[0] - 4
+              : skyBlue2Props.position[0] + 4,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start + 0.01
+      );
+      objectTimeline.current.from(
+        skyBlue2Ref.current.rotation,
+        {
+          y: skyBlue2Props.rotation[1] + Math.PI,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start + 0.01
+      );
+
+      objectTimeline.current.from(
+        skyBlue3Ref.current.position,
+        {
+          x:
+            skyBlue3Props.position[0] < 0
+              ? skyBlue3Props.position[0] - 4
+              : skyBlue3Props.position[0] + 4,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start + 0.02
+      );
+      objectTimeline.current.from(
+        skyBlue3Ref.current.rotation,
+        {
+          y: skyBlue3Props.rotation[1] - Math.PI,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start + 0.02
+      );
+
+      objectTimeline.current.from(
+        skyBlue4Ref.current.position,
+        {
+          x:
+            skyBlue4Props.position[0] < 0
+              ? skyBlue4Props.position[0] - 4
+              : skyBlue4Props.position[0] + 4,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start + 0.03
+      );
+      objectTimeline.current.from(
+        skyBlue4Ref.current.rotation,
+        {
+          y: skyBlue4Props.rotation[1] - Math.PI,
+          duration: level2Duration,
+          ease: "power3.out",
+        },
+        level2Start + 0.03
+      );
+
+      // Nivel 3: offset 0.2452 - 0.3066
+      const level3Start = 0.2452;
+      const level3Duration = 0.3066 - 0.2452;
+
+      // Morada
+      objectTimeline.current.from(
+        purple1Ref.current.position,
+        {
+          z:
+            purple1Props.position[2] < 0
+              ? purple1Props.position[2] - 4
+              : purple1Props.position[2] + 4,
+          duration: level3Duration,
+          ease: "power3.out",
+        },
+        level3Start
+      );
+      objectTimeline.current.from(
+        purple1Ref.current.rotation,
+        {
+          y: purple1Props.rotation[1] - Math.PI,
+          duration: level3Duration,
+          ease: "power3.out",
+        },
+        level3Start
+      );
+
+      // Nivel 4: offset 0.4291 - 0.4906 (original, ejemplo)
+      const level4Start = 0.4291;
+      const level4Duration = 0.4906 - 0.4291;
+
+      objectTimeline.current.from(
+        white1Ref.current.position,
+        {
+          x: -15,
+          duration: level4Duration,
+          ease: "power3.out",
+        },
+        level4Start
+      );
+      objectTimeline.current.from(
+        white1Ref.current.rotation,
+        {
+          y: -Math.PI,
+          duration: level4Duration,
+          ease: "power3.out",
+        },
+        level4Start
+      );
+
+      objectTimeline.current.from(
+        white2Ref.current.position,
+        {
+          x: 15,
+          duration: level4Duration,
+          ease: "power3.out",
+        },
+        level4Start + 0.01
+      );
+      objectTimeline.current.from(
+        white2Ref.current.rotation,
+        {
+          y: Math.PI,
+          duration: level4Duration,
+          ease: "power3.out",
+        },
+        level4Start + 0.01
+      );
+
+      objectTimeline.current.from(
+        white3Ref.current.position,
+        {
+          x:
+            white3Props.position[0] < 0
+              ? white3Props.position[0] - 4
+              : white3Props.position[0] + 4,
+          duration: level4Duration,
+          ease: "power3.out",
+        },
+        level4Start + 0.02
+      );
+      objectTimeline.current.from(
+        white3Ref.current.rotation,
+        {
+          y: white3Props.rotation[1] - Math.PI,
+          duration: level4Duration,
+          ease: "power3.out",
+        },
+        level4Start + 0.02
+      );
+
+      // Nivel 5: offset 0.6131 - 0.6592 (sin cambios)
+      const level5Start = 0.6131;
+      const level5Duration = 0.6592 - 0.6131;
+
+      objectTimeline.current.from(
+        red1Ref.current.position,
+        {
+          y: -10,
+          duration: level5Duration,
+          ease: "back.out(1.7)",
+        },
+        level5Start
+      );
+      objectTimeline.current.from(
+        red1Ref.current.rotation,
+        {
+          y: Math.PI / 2,
+          duration: level5Duration,
+          ease: "power3.out",
+        },
+        level5Start
+      );
+
+      objectTimeline.current.from(
+        red2Ref.current.position,
+        {
+          z: 5,
+          x: -5,
+          duration: level5Duration,
+          ease: "power3.out",
+        },
+        level5Start - 0.01
+      );
+      objectTimeline.current.from(
+        red2Ref.current.rotation,
+        {
+          y: -3,
+          duration: level5Duration,
+          ease: "power3.out",
+        },
+        level5Start
+      );
+      objectTimeline.current.from(
+        red3Ref.current.position,
+        {
+          z: -5,
+          x: 5,
+          duration: level5Duration,
+          ease: "power3.out",
+        },
+        level5Start - 0.01
+      );
+
+      // Nivel 6: offset 0.7817 - 0.8431
+      const level6Start = 0.7817;
+      const level6Duration = 0.8431 - 0.7817;
+
+      // Rosas
+      objectTimeline.current.from(
+        pink1Ref.current.position,
+        {
+          z: pink1Props.position[2] + 4,
+          x: pink1Props.position[0] + 4,
+          duration: level6Duration,
+          ease: "power3.out",
+        },
+        level6Start - 0.01
+      );
+      objectTimeline.current.from(
+        pink1Ref.current.rotation,
+        {
+          y: pink1Props.rotation[1] + 0.5,
+          duration: level6Duration,
+          ease: "power3.out",
+        },
+        level6Start
+      );
+
+      objectTimeline.current.from(
+        pink2Ref.current.position,
+        {
+          z: pink2Props.position[2] + 4,
+          x: pink2Props.position[0] + 4,
+          duration: level6Duration,
+          ease: "power3.out",
+        },
+        level6Start
+      );
+      objectTimeline.current.from(
+        pink2Ref.current.rotation,
+        {
+          y: pink2Props.rotation[1] - 0.5,
+          duration: level6Duration,
+          ease: "power3.out",
+        },
+        level6Start + 0.01
+      );
+
+      objectTimeline.current.from(
+        pink3Ref.current.position,
+        {
+          z: pink3Props.position[2] + 4,
+          x: pink3Props.position[0] + 4,
+          duration: level6Duration,
+          ease: "power3.out",
+        },
+        level6Start - 0.005
+      );
+      objectTimeline.current.from(
+        pink3Ref.current.rotation,
+        {
+          y: pink3Props.rotation[1] + 0.5,
+          duration: level6Duration,
+          ease: "power3.out",
+        },
+        level6Start + 0.01
+      );
+
+      // Nivel 7: offset 0.9350 - 1.0000
+      const level7Start = 0.935;
+      const level7Duration = 1.0 - 0.935;
+
+      // Azul
+      objectTimeline.current.from(
+        blue1Ref.current.position,
+        {
+          x:
+            blue1Props.position[0] < 0
+              ? blue1Props.position[0] - 4
+              : blue1Props.position[0] + 4,
+          duration: level7Duration,
+          ease: "power3.out",
+        },
+        level7Start
+      );
+      objectTimeline.current.from(
+        blue1Ref.current.rotation,
+        {
+          y: blue1Props.rotation[1] - Math.PI,
+          duration: level7Duration,
+          ease: "power3.out",
+        },
+        level7Start
+      );
     },
     { scope: flowersScroll }
   );
