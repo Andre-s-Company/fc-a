@@ -236,6 +236,13 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
     rotation: { value: [0, 0, 0], step: 0.1 },
   });
 
+  // Flores Azules
+  const blue1Props = useControls("blue1", {
+    position: { value: [0, 0, 0], step: 0.1 },
+    scale: { value: 1, min: 0, max: 50, step: 0.1 },
+    rotation: { value: [0, 0, 0], step: 0.1 },
+  });
+
   return (
     <group ref={flowersScroll} {...props} dispose={null}>
       <group ref={level1} position={[0, -FLOOR_HEIGHT * 0, 0]}>
@@ -276,7 +283,7 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
       </group>
 
       <group ref={level7} position={[0, -FLOOR_HEIGHT * 6, 0]}>
-        <Blue1 ref={blue1Ref} />
+        <Blue1 ref={blue1Ref} {...blue1Props} />
       </group>
     </group>
   );
