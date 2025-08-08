@@ -15,7 +15,7 @@ function App() {
       style={{ backgroundColor: background }}
     >
       {/* <Menu /> */}
-      <Leva hidden />
+      <Leva collapsed/>
       <Canvas
         className="r3f"
         camera={{
