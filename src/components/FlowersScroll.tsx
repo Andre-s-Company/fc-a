@@ -438,10 +438,7 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
       objectTimeline.current.from(
         blue1Ref.current.position,
         {
-          x:
-            blue1Props.position[0] < 0
-              ? blue1Props.position[0] - 4
-              : blue1Props.position[0] + 4,
+          x: blue1Props.position[0] + 4,
           duration: level7Duration,
           ease: "power3.out",
         },
@@ -450,7 +447,7 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
       objectTimeline.current.from(
         blue1Ref.current.rotation,
         {
-          y: blue1Props.rotation[1] - Math.PI,
+          y: blue1Props.rotation[1] - 1.0,
           duration: level7Duration,
           ease: "power3.out",
         },
