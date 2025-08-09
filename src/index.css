@@ -1,4 +1,16 @@
+@font-face {
+    font-family: 'PauLithFont1';
+    src: url('/font/PauLithFont1-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import "tailwindcss";
+
+
+* {
+    font-family: 'PauLithFont1', sans-serif;
+}
 
 .r3f {
     touch-action: auto;

@@ -513,7 +513,7 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
 
   // Flores Moradas
   const purple1Props: FlowerProps = {
-    position: [0, 0, 2.0],
+    position: [0, -4, 2.0],
     scale: 3,
     rotation: [0, 0, 0],
   };
