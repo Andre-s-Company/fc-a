@@ -8,7 +8,7 @@ import { cn } from "./shared/utils";
 import { Counter } from "./components/Counter";
 
 // const targetDate = new Date("2025-08-18T00:01:00");
-const targetDate = new Date("2025-08-09T16:36:00");
+const targetDate = new Date("2025-08-09T16:45:30");
 
 function getTimeRemaining() {
   const now = new Date();
