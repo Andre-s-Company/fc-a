@@ -19,9 +19,7 @@ const Section = ({ children, opacity = 1, className }: SectionProps) => {
       )}
       style={{ opacity: opacity }}
     >
-      <div className="px-6 py-8">
-        {children}
-      </div>
+      <div className="px-6 py-8">{children}</div>
     </section>
   );
 };
@@ -44,8 +42,8 @@ export const Overlay = () => {
     setOpacitySection3(scroll.curve(0.3128, 0.06));
     setOpacitySection4(scroll.curve(0.4628, 0.06));
     setOpacitySection5(scroll.curve(0.6228, 0.06));
-    setOpacitySection6(scroll.curve(0.7950, 0.06));
-    setOpacitySection7(scroll.curve(0.9700, 0.06));
+    setOpacitySection6(scroll.curve(0.795, 0.06));
+    setOpacitySection7(scroll.curve(0.97, 0.06));
   });
 
   return (
@@ -53,73 +51,62 @@ export const Overlay = () => {
       <div className="w-screen h-fit flex flex-col items-center">
         {/* ---------------------- Section 1 ---------------------- */}
         <Section className={""} opacity={opacitySection1}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
+          <p className="text-2xl text-yellow-950 -mt-32 mx-16 mr-2 bg-yellow-50/50 p-4 rounded-lg">
+            Holi amor, ojalá cuando estés leyendo esto pueda estar a tu lado, y
+            si no lo estoy, quiero que mientras lees esto sientas la calidez de
+            mí abrazándote, y ojalá te guste este detalle jsjsjs. Oye, te quiero
+            c:
           </p>
         </Section>
         {/* ---------------------- Section 2 ---------------------- */}
         <Section className={""} opacity={opacitySection2}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
+          <p className="text-2xl text-sky-950 -mt-6 bg-sky-50/50 p-4 rounded-lg">
+            Sé que el azul es tu color favorito, y cómo no serlo si luces
+            hermosa con él. Cada que veo este color no puedo evitar pensar en ti
+            y que quisiera que estuvieras a mi lado para poder apreciarlo
+            juntos.
           </p>
         </Section>
         {/* ---------------------- Section 3 ---------------------- */}
         <Section className={""} opacity={opacitySection3}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
+          <p className="text-2xl text-purple-950 ml-16 -mt-6 -mr-6 bg-purple-50/50 p-4 rounded-lg">
+            Ya que mencioné el azul, uno de tus colores favoritos, porque no
+            mencionar el morado. Escuché que las flores moradas significan
+            sentimientos sinceros. Si tuviera que escoger un color para darle
+            tono a mi amor por ti, sería el morado.
           </p>
         </Section>
         {/* ---------------------- Section 4 ---------------------- */}
-        <Section className={""} opacity={opacitySection4}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
+        <Section className={"justify-start"} opacity={opacitySection4}>
+          <p className="text-2xl text-neutral-950 ml-6 -mt-6 -mr-6 bg-neutral-50/50 p-4 rounded-lg">
+            Cuando estoy escribiendo esto, lo hago con una emoción en mi corazón
+            que lo desborda, ya que aún no nos hemos visto en persona. Cuando
+            pienso en ello, mi corazón se altera, me llena de felicidad e
+            ilusión. Cuando te haya visto, te habré dado una fracción de los
+            abrazos que no nos hemos dado, todos estos llenos de amor.
           </p>
         </Section>
         {/* ---------------------- Section 5 ---------------------- */}
-        <Section className={""} opacity={opacitySection5}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
+        <Section className={"justify-start"} opacity={opacitySection5}>
+          <p className="text-2xl text-red-950 mt-12 bg-red-50/50 p-4 rounded-lg">
+            Ahora que recuerdo, la última vez que escuché el relato del listón
+            rojo fue gracias a ti: un listón rojo que une a dos almas. Aunque el
+            tiempo y la distancia nos separan, el rojo listón nos recuerda que
+            el amor verdadero siempre encuentra el camino para volver a unirnos.
+            Quiero que sepas que...
           </p>
         </Section>
         {/* ---------------------- Section 6 ---------------------- */}
-        <Section className={""} opacity={opacitySection6}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
-          </p>
+        <Section className={"justify-start"} opacity={opacitySection6}>
+          <h2 className="w-full text-center text-5xl mt-24 text-rose-950 bg-rose-50/50 p-4 rounded-lg">
+            Te amo {""}
+          </h2>
         </Section>
         {/* ---------------------- Section 7 ---------------------- */}
-        <Section className={""} opacity={opacitySection7}>
-          <h2>Lorem ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
-            suscipit sed adipisci, nobis porro est velit maxime nihil
-            reiciendis? Sapiente asperiores laboriosam officiis sit facilis
-            tempora quisquam, ipsa neque iste!
-          </p>
+        <Section className={"justify-end"} opacity={opacitySection7}>
+          <h2 className="w-full text-center text-5xl mb-24 text-blue-950 bg-blue-50/50 p-4 rounded-lg">
+            Feliz cumpleaños c:
+          </h2>
         </Section>
       </div>
     </Scroll>
