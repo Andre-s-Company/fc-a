@@ -51,7 +51,7 @@ export const Overlay = () => {
       <div className="w-screen h-fit flex flex-col items-center">
         {/* ---------------------- Section 1 ---------------------- */}
         <Section className={""} opacity={opacitySection1}>
-          <p className="text-2xl text-yellow-950 -mt-32 mx-16 mr-2 bg-yellow-50/50 p-4 rounded-lg">
+          <p className="text-2xl text-yellow-950 -mt-32 mx-16 mr-2 bg-yellow-50/50 p-4 rounded-lg animate-fade animate-duration-500">
             Holi amor, ojalá cuando estés leyendo esto pueda estar a tu lado, y
             si no lo estoy, quiero que mientras lees esto sientas la calidez de
             mí abrazándote, y ojalá te guste este detalle jsjsjs. Oye, te quiero

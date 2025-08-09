@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import gsap from "gsap";
-import { useScroll } from "@react-three/drei";
-import { useRef, type JSX } from "react";
+import { Html, useScroll } from "@react-three/drei";
+import { useRef, useState, type JSX } from "react";
 import { useGSAP } from "@gsap/react";
 import { useFrame } from "@react-three/fiber";
 import { useBackground } from "../store/useBackground";
@@ -25,6 +25,7 @@ import { Red3 } from "./models/Red3";
 import { Pink1 } from "./models/Pink1";
 import { Pink2 } from "./models/Pink2";
 import { useControls } from "leva";
+import { cn } from "../shared/utils";
 
 gsap.registerPlugin(useGSAP);
 
@@ -580,9 +581,191 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
     rotation: { value: [0, 0, 0], step: 0.1 },
   });
 
+  const [isExperienceStarted, setIsExperienceStarted] = useState(false);
+
+  useFrame(() => {
+    if (!isExperienceStarted) {
+      scroll.offset = -1;
+    }
+  });
+
+  const runLevel1Animations = () => {
+    // Animación de entrada de las flores amarillas (nivel 1)
+    const level1Duration = 1.5;
+    const level1Start = 0;
+
+    const tl = gsap.timeline();
+
+    tl.from(
+      yellow1Ref.current.position,
+      {
+        x:
+          yellow1Props.position[0] < 0
+            ? yellow1Props.position[0] - 4
+            : yellow1Props.position[0] + 4,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start
+    );
+    tl.from(
+      yellow1Ref.current.rotation,
+      {
+        y: yellow1Props.rotation[1] - Math.PI,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start
+    );
+
+    tl.from(
+      yellow2Ref.current.position,
+      {
+        x:
+          yellow2Props.position[0] < 0
+            ? yellow2Props.position[0] - 4
+            : yellow2Props.position[0] + 4,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.01
+    );
+    tl.from(
+      yellow2Ref.current.rotation,
+      {
+        y: yellow2Props.rotation[1] + Math.PI,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.01
+    );
+
+    tl.from(
+      yellow3Ref.current.position,
+      {
+        x:
+          yellow3Props.position[0] < 0
+            ? yellow3Props.position[0] - 4
+            : yellow3Props.position[0] + 4,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.02
+    );
+    tl.from(
+      yellow3Ref.current.rotation,
+      {
+        y: yellow3Props.rotation[1] - Math.PI,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.02
+    );
+
+    tl.from(
+      yellow4Ref.current.position,
+      {
+        x: yellow4Props.position[0] + 4,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.03
+    );
+    tl.from(
+      yellow4Ref.current.rotation,
+      {
+        y: yellow4Props.rotation[1] - Math.PI,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.03
+    );
+
+    tl.from(
+      yellow5Ref.current.position,
+      {
+        x:
+          yellow5Props.position[0] < 0
+            ? yellow5Props.position[0] - 4
+            : yellow5Props.position[0] + 4,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.04
+    );
+    tl.from(
+      yellow5Ref.current.rotation,
+      {
+        y: yellow5Props.rotation[1] - Math.PI,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.04
+    );
+
+    tl.from(
+      yellow6Ref.current.position,
+      {
+        x:
+          yellow6Props.position[0] < 0
+            ? yellow6Props.position[0] - 4
+            : yellow6Props.position[0] + 4,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.05
+    );
+    tl.from(
+      yellow6Ref.current.rotation,
+      {
+        y: yellow6Props.rotation[1] - Math.PI,
+        duration: level1Duration,
+        ease: "power3.out",
+      },
+      level1Start + 0.05
+    );
+  };
+
+  const handleStartExperience = () => {
+    setIsExperienceStarted(true);
+    runLevel1Animations();
+  };
+
   return (
     <group ref={flowersScroll} {...props} dispose={null}>
-      <group ref={level1} position={[0, -FLOOR_HEIGHT * 0, 0]}>
+      <Html
+        center
+        style={{
+          width: "100vw",
+          height: "100vh",
+          display: !isExperienceStarted ? "flex" : "none",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+        className={cn("bg-yellow-50 transition-all animate-fade animate-duration-300", {
+          "opacity-100": !isExperienceStarted,
+          "opacity-0": isExperienceStarted,
+        })}
+      >
+        <button
+          onClick={handleStartExperience}
+          className="text-4xl font-bold bg-gradient-to-br from-yellow-100 via-yellow-50 to-yellow-200 text-yellow-900 p-5 px-10 rounded-xl border-4 border-yellow-400 shadow-lg hover:scale-105 hover:bg-yellow-100 hover:border-yellow-500 transition-all duration-300"
+          style={{
+            minWidth: 220,
+            letterSpacing: "0.03em",
+            boxShadow: "0 4px 24px 0 rgba(255, 221, 77, 0.15)",
+          }}
+        >
+          Comenzar c:
+        </button>
+      </Html>
+
+      <group
+        ref={level1}
+        position={
+          isExperienceStarted ? [0, -FLOOR_HEIGHT * 0, 0] : [999, 999, 999]
+        }
+      >
         <Yellow1 ref={yellow1Ref} {...yellow1Props} />
         <Yellow2 ref={yellow2Ref} {...yellow2Props} />
         <Yellow3 ref={yellow3Ref} {...yellow3Props} />
@@ -591,7 +774,12 @@ export const FlowersScroll = (props: JSX.IntrinsicElements["group"]) => {
         <Yellow5 ref={yellow6Ref} {...yellow6Props} />
       </group>
 
-      <group ref={level2} position={[0, -FLOOR_HEIGHT * 1, 0]}>
+      <group
+        ref={level2}
+        position={
+          isExperienceStarted ? [0, -FLOOR_HEIGHT * 1, 0] : [999, 999, 999]
+        }
+      >
         <SkyBlue1 ref={skyBlue1Ref} {...skyBlue1Props} />
         <SkyBlue2 ref={skyBlue2Ref} {...skyBlue2Props} />
         <SkyBlue3 ref={skyBlue3Ref} {...skyBlue3Props} />
