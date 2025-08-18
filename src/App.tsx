@@ -7,7 +7,7 @@ import { useBackground } from "./store/useBackground";
 import { cn } from "./shared/utils";
 import { Counter } from "./components/Counter";
 
-const targetDate = new Date("2025-08-18T00:01:00");
+const targetDate = new Date("2025-08-19T00:01:00");
 
 function getTimeRemaining() {
   const now = new Date();
