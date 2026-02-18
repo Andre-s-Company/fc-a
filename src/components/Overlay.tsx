@@ -52,54 +52,37 @@ export const Overlay = () => {
         {/* ---------------------- Section 1 ---------------------- */}
         <Section className={""} opacity={opacitySection1}>
           <p className="text-2xl text-yellow-950 -mt-32 mx-16 mr-2 bg-yellow-50/50 p-4 rounded-lg animate-fade animate-duration-500">
-            Holi amor, ojalá cuando estés leyendo esto pueda estar a tu lado, y
-            si no lo estoy, quiero que mientras lees esto sientas la calidez de
-            mí abrazándote, y ojalá te guste este detalle jsjsjs. Oye, te quiero
-            c:
+            Mensaje bonito que acabo de quitar
           </p>
         </Section>
         {/* ---------------------- Section 2 ---------------------- */}
         <Section className={""} opacity={opacitySection2}>
           <p className="text-2xl text-sky-950 -mt-6 bg-sky-50/50 p-4 rounded-lg">
-            Sé que el azul es tu color favorito, y cómo no serlo si luces
-            hermosa con él. Cada que veo este color no puedo evitar pensar en ti
-            y que quisiera que estuvieras a mi lado para poder apreciarlo
-            juntos.
+Mensaje bonito que acabo de quitar
           </p>
         </Section>
         {/* ---------------------- Section 3 ---------------------- */}
         <Section className={""} opacity={opacitySection3}>
           <p className="text-2xl text-purple-950 ml-16 -mt-6 -mr-6 bg-purple-50/50 p-4 rounded-lg">
-            Ya que mencioné el azul, uno de tus colores favoritos, porque no
-            mencionar el morado. Escuché que las flores moradas significan
-            sentimientos sinceros. Si tuviera que escoger un color para darle
-            tono a mi amor por ti, sería el morado.
+Mensaje bonito que acabo de quitar
           </p>
         </Section>
         {/* ---------------------- Section 4 ---------------------- */}
         <Section className={"justify-start"} opacity={opacitySection4}>
           <p className="text-2xl text-neutral-950 ml-6 -mt-6 -mr-6 bg-neutral-50/50 p-4 rounded-lg">
-            Cuando estoy escribiendo esto, lo hago con una emoción en mi corazón
-            que lo desborda, ya que aún no nos hemos visto en persona. Cuando
-            pienso en ello, mi corazón se altera, me llena de felicidad e
-            ilusión. Cuando te haya visto, te habré dado una fracción de los
-            abrazos que no nos hemos dado, todos estos llenos de amor.
+Mensaje bonito que acabo de quitar
           </p>
         </Section>
         {/* ---------------------- Section 5 ---------------------- */}
         <Section className={"justify-start"} opacity={opacitySection5}>
           <p className="text-2xl text-red-950 mt-12 bg-red-50/50 p-4 rounded-lg">
-            Ahora que recuerdo, la última vez que escuché el relato del listón
-            rojo fue gracias a ti: un listón rojo que une a dos almas. Aunque el
-            tiempo y la distancia nos separan, el rojo listón nos recuerda que
-            el amor verdadero siempre encuentra el camino para volver a unirnos.
-            Quiero que sepas que...
+Mensaje bonito que acabo de quitar
           </p>
         </Section>
         {/* ---------------------- Section 6 ---------------------- */}
         <Section className={"justify-start"} opacity={opacitySection6}>
           <h2 className="w-full text-center text-5xl mt-24 text-rose-950 bg-rose-50/50 p-4 rounded-lg">
-            Te amo {""}
+            Te amo chale jajajja {""}
           </h2>
         </Section>
         {/* ---------------------- Section 7 ---------------------- */}
